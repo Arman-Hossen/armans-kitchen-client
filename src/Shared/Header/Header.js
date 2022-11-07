@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logoimg.png'
+import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {user, logOut}= useContext(AuthContext)
+    const handleLogOut = () =>{
+      logOut()
+      .then()
+      .catch();
+    }
     const manueItems =<>
-    <li className='font-semibold'><Link to='/'>Home</Link></li>
-    
-    <li className='font-semibold'><Link to='/login'>Login</Link></li>
-    
-    
-   </>
+     <li className='font-semibold'><Link to='/'>Home</Link></li>
+     {
+        user?.email?
+        <>
+         <li className='font-semibold'><Link to='/myreveiw'>My Reveiw</Link></li>
+         <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
+         <li className='font-semibold'>
+          <button onClick={handleLogOut} className='btn-ghost'>Sign Out</button>
+         </li>
+        </>
+
+        :
+        <li className='font-semibold'><Link to='/login'>Login</Link></li>
+     }
+     
+    </>
     return (
         <div className="navbar h-10 mb-10 pt-5 bg-base-100">
   <div className="navbar-start">
