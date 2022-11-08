@@ -5,6 +5,7 @@ import Login from "../../Pages/Login/Login";
 import ReveiwForm from "../../Pages/ReveiwForm/ReveiwForm";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../layout/Main");
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/reveiw/:id',
-                element:<ReveiwForm></ReveiwForm> ,
+                element:<PrivateRoute><ReveiwForm></ReveiwForm></PrivateRoute> ,
                 loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
             },
 
