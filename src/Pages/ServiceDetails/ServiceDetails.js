@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contex/AuthProvider/AuthProvider";
 import { ImageViewer } from "react-image-viewer-dv";
-import { BsFillPeopleFill } from "react-icons/bs";
+import { AiFillStar } from "react-icons/ai";
 
 const ServiceDetails = () => {
   const {
@@ -24,31 +24,26 @@ const ServiceDetails = () => {
           {" "}
           Service Details
         </h2>
-        <div className="card card-compact  bg-base-100 shadow-xl mb-4 text-center">
-          <figure>
-            <ImageViewer>
+        <div className="mx-auto card w-3/4 bg-base-100 shadow-xl">
+                <figure className="px-10 pt-10">
+                <ImageViewer>
               <img className="rounded-xl w-full" src={img} alt="" />
             </ImageViewer>
-          </figure>
-          <h2 className=" text-2xl font-bold text-center m-4 ">{title}</h2>
-          <div className="card-body ">
-            <p className="text-xl font-semibold text-orange-600">
-              Product No: {service_id}
-            </p>
-            <p className="text-xl font-semibold text-orange-600">
-              Price: {price}
-            </p>
-            <p className="text-xl font-semibold text-orange-600">
-              Rating: {rating}
-            </p>
-          </div>
-
-          <p className=""> {description}</p>
-          <p className="text-xl font-semibold text-orange-600 m-4">
-            {" "}
-            Reveiw Given By {total_reveiwer} people
-          </p>
-        </div>
+                </figure>
+                <div className="card-body items-center text-center">
+                   <h2 className="card-title">Product Id: {service_id}</h2>
+                    <h2 className="card-title">Name: {title}</h2>
+                    <h2 className="card-title">Price: {price}</h2>
+                    <h2 className="card-title">Reveiw Given By {total_reveiwer} people</h2>
+                    <p className="flex items-center">
+                        <AiFillStar className="text-orange-400" />{" "}
+                        <span>{rating}</span>
+                    </p>
+                    
+                    <p>{description}</p>
+                </div>
+            </div>
+       
         <div>
           <h2 className="text-center font-bold text-2xl text-orange-500 m-5">
             {" "}
@@ -58,7 +53,7 @@ const ServiceDetails = () => {
              user?.email?
              <>
              <div className="text-center">
-             <Link to='/'><button className="btn btn-primary">Give Reviw</button></Link>
+             <Link to={`/reveiw/${_id}`}><button className="btn btn-primary">Give Reviw</button></Link>
              </div>
              </>
              :

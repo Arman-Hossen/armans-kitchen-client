@@ -2,6 +2,7 @@ import Blog from "../../Pages/Blog/Blog";
 import AllService from "../../Pages/Home/AllService/AllService";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import ReveiwForm from "../../Pages/ReveiwForm/ReveiwForm";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import SignUp from "../../Pages/SignUp/SignUp";
 
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
+                loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path:'/reveiw/:id',
+                element:<ReveiwForm></ReveiwForm> ,
                 loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
             },
 
