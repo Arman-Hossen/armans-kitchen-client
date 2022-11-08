@@ -97,7 +97,7 @@ const Login = () => {
             </Link>
           </p>
           <div className='d-grid gap-2 text-center mt-3'>
-         <button className='btn btn-outline btn-primary mb-5  ' onClick={handleSubmit} ><FcGoogle/>{" "}Log in With Gmail</button>
+         <button className='btn btn-outline btn-primary mb-5  ' onClick={handleSubmit} ><FcGoogle/>{" "} Log in With Google</button>
         
          
          </div>

@@ -11,13 +11,14 @@ const Header = () => {
       .catch();
     }
     const manueItems =<>
-     <li className='font-semibold'><Link to='/'>Home</Link></li>
+     <li className='font-semibold mr-3'><Link to='/'>Home</Link></li>
+     <li className='font-semibold mr-3'><Link to='/blog'>Blog</Link></li>
      {
         user?.email?
         <>
-         <li className='font-semibold'><Link to='/myreveiw'>My Reveiw</Link></li>
-         <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
-         <li className='font-semibold'>
+         <li className='font-semibold mr-3'><Link to='/myreveiw'>My Reveiw</Link></li>
+         <li className='font-semibold mr-3'><Link to='/addservice'>Add Service</Link></li>
+         <li className='font-semibold mr-3'>
           <button onClick={handleLogOut} className='btn-ghost'>Sign Out</button>
          </li>
         </>
@@ -25,6 +26,7 @@ const Header = () => {
         :
         <li className='font-semibold'><Link to='/login'>Login</Link></li>
      }
+      
      
     </>
     return (
