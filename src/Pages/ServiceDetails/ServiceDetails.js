@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contex/AuthProvider/AuthProvider";
 import { ImageViewer } from "react-image-viewer-dv";
 import { AiFillStar } from "react-icons/ai";
+import ShowReview from "../ShowReview/ShowReview";
 
 const ServiceDetails = () => {
   const {
@@ -38,6 +39,8 @@ const ServiceDetails = () => {
                     <p className="flex items-center">
                         <AiFillStar className="text-orange-400" />{" "}
                         <span>{rating}</span>
+
+                        
                     </p>
                     
                     <p>{description}</p>
@@ -49,6 +52,9 @@ const ServiceDetails = () => {
             {" "}
             Reveiw
           </h2>
+          <div className="">
+          <ShowReview id={_id}></ShowReview>
+          </div>
           {
              user?.email?
              <>
