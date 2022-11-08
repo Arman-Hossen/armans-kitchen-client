@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logInImg from '../../assets/login.avif'
 import { AuthContext } from "../../Contex/AuthProvider/AuthProvider";
+import { FcGoogle } from 'react-icons/fc';
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-    const {login} = useContext(AuthContext);
+    const {googleProvider,login} = useContext(AuthContext);
+    const logInByGoogle = new GoogleAuthProvider();
 
     // const location = useLocation();
     // const navigate = useNavigate();
@@ -32,6 +35,21 @@ const Login = () => {
         .catch(error => console.log(error));
 
     }
+    const handleSubmit = () =>{
+        googleProvider(logInByGoogle)
+        .then((result) =>{
+          const user = result.user;
+          console.log(user);
+          
+    
+          
+    
+        })
+        .catch((error) =>{
+          console.error(error)
+        })
+    
+      }
   return (
     <div className="hero w-full my-20 ">
       <div className="hero-content grid md:grid-cols-2 gap-20 flex-col lg:flex-row">
@@ -73,11 +91,16 @@ const Login = () => {
             </div>
           </form>
           <p className="text-center mb-4">
-            New to Genius Car?{" "}
+            New to Arman's Kitchen?{" "}
             <Link className="text-orange-600 font-bold" to="/signup">
               SignUp
             </Link>
           </p>
+          <div className='d-grid gap-2 text-center mt-3'>
+         <button className='btn btn-outline btn-primary mb-5  ' onClick={handleSubmit} ><FcGoogle/>{" "}Log in With Gmail</button>
+        
+         
+         </div>
         </div>
       </div>
     </div>
