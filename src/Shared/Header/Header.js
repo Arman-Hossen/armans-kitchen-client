@@ -11,12 +11,12 @@ const Header = () => {
       .catch();
     }
     const manueItems =<>
-     <li className='font-semibold mr-3'><Link to='/'>Home</Link></li>
+     <li className='font-semibold mr-3'><Link to='/home'>Home</Link></li>
      <li className='font-semibold mr-3'><Link to='/blog'>Blog</Link></li>
      {
         user?.email?
         <>
-         <li className='font-semibold mr-3'><Link to='/myreveiw'>My Reveiw</Link></li>
+         <li className='font-semibold mr-3'><Link to='/myreview'>My Reveiw</Link></li>
          <li className='font-semibold mr-3'><Link to='/addservice'>Add Service</Link></li>
          <li className='font-semibold mr-3'>
           <button onClick={handleLogOut} className='btn-ghost'>Sign Out</button>

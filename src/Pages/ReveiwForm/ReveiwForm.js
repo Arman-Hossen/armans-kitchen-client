@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ReveiwForm = () => {
     const dateobj = new Date();
@@ -41,7 +43,16 @@ const ReveiwForm = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged){
-                    alert('Review placed successfully')
+                    toast.success("Review Post on Database successfully", {
+                        position: "top-center",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: false,
+                        progress: undefined,
+                        theme: "dark",
+                    });
                     form.reset();
                     
                 }
@@ -70,7 +81,9 @@ const ReveiwForm = () => {
 
             
         </form>
+        <ToastContainer />
     </div>
+
     );
 };
 
