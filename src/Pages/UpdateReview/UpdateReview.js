@@ -1,10 +1,12 @@
 import React, {  useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const UpdateReview = () => {
     const data = useLoaderData();
-    const {_id,message,serviceName,rating,service,price,reviewer,email,img,date} = data;
+    const {_id,message,serviceName,rating,price} = data;
     const [user, setUser] = useState( data);
 
     const handleUpdateUser = (event) => {
@@ -23,8 +25,19 @@ const UpdateReview = () => {
           .then((data) => {
     
             if (data.modifiedCount > 0){
-                alert('User Updated');
+                toast.success("Update done successfully!", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 
+                const form = event.target;
+                form.reset();
                
             }
             
@@ -45,25 +58,31 @@ const UpdateReview = () => {
       };
     return (
         <div>
-        <form onSubmit={handleUpdateUser}  className='m-10' >
-            
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                {/* <input onChange={handleInputChange} name="service" type="text" placeholder="service" defaultValue={service} className="input input-ghost w-full  input-bordered" readOnly required/>
-                <input onChange={handleInputChange} name="serviceName" type="text" placeholder="serviceName" defaultValue={serviceName} className="input input-ghost w-full  input-bordered" readOnly required />
-                <input onChange={handleInputChange} name="price" type="text" placeholder="price" defaultValue={price} className="input input-ghost w-full  input-bordered" readOnly />
-                <input onChange={handleInputChange} name="reviewer" type="text" placeholder="reviewer" defaultValue={reviewer} className="input input-ghost w-full   input-bordered" readOnly />
-                <input onChange={handleInputChange} name="email" type="text" placeholder="email" defaultValue={email} className="input input-ghost w-full  input-bordered" readOnly />
-                <input onChange={handleInputChange} name="img" type="text" placeholder="img" defaultValue={img} className="input input-ghost w-full  input-bordered" readOnly required /> */}
-                <input onChange={handleInputChange} name="rating" type="text" placeholder="rating" defaultValue={rating} className="input input-ghost w-full  input-bordered" required />
-                <input onChange={handleInputChange} name="date" type="text" placeholder="date" defaultValue={date} className="input input-ghost w-full  input-bordered" readOnly required />
-            </div>
-            <textarea onChange={handleInputChange} name="message" className="textarea textarea-bordered mt-5 h-24 w-full" placeholder="FeedBack" defaultValue={message} required></textarea>
-            <div className='text-center'>
-            <input className='btn btn-primary' type="submit" value="update Reveiw" />
-            </div>
 
+            <h2 className='text-center text-3xl text-orange-600 font-bold'>Update Your Review Here!</h2>
+            <form onSubmit={handleUpdateUser} className="m-10 ">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+            Product (read only)
+        </label>
+            <input onChange={handleInputChange} name="serviceName" type="text" placeholder="Service Name" defaultValue={serviceName} className="input input-ghost w-full my-2 input-bordered" readOnly/>
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+            Ratings
+        </label>
+            <input onChange={handleInputChange} name="rating" type="text" placeholder="Rating" defaultValue={rating} className="input input-ghost w-full my-2 input-bordered"/>
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+            Price (read only)
+        </label>
+            <input onChange={handleInputChange} name="price" type="text" placeholder="Price" defaultValue={price} className="input input-ghost w-full my-2 input-bordered"/>
             
+            <textarea onChange={handleInputChange} name="message" placeholder="FeedBack" className="textarea textarea-bordered mt-5 h-24 w-full"  defaultValue={message}></textarea>
+            <div className="text-center mt-4">
+                <button type="submit" className="btn btn-primary ">Update Review</button>
+            </div>
         </form>
+
+
+        <ToastContainer />
+        
         
     </div>
     );

@@ -21,7 +21,7 @@ const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
   return (
     <div>
-      <h1 className="text-center">Details And Reveiw </h1>
+      <h1 className="text-center">Details And Review</h1>
       <div className="grid grid-cols-1 m-4">
         <h2 className="text-center font-bold text-2xl text-orange-500 m-5">
           {" "}

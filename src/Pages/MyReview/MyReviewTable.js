@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyReviewTable = ({review, handleDelete}) => {
-    const { _id, serviceName, message, reviewer, img,rating, status } = review;
+    const { _id, serviceName, message, reviewer, img,rating } = review;
     
     return (
         <tr>
