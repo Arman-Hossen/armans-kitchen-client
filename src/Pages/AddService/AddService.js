@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
+import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
+    useTitle('Add Service')
     const dateobj = new Date();
     const date = dateobj.toISOString();
-    const { user } = useContext(AuthContext);
+    
     const handleService = event => {
         event.preventDefault();
         const form = event.target;

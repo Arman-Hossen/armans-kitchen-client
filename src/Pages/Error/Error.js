@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/error_page.png'
+import useTitle from '../../hooks/useTitle';
 import './Error.css'
 
 const Error = () => {
+    useTitle('404');
     return (
         <div >
         

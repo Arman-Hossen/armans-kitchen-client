@@ -1,9 +1,11 @@
 import React, {  useEffect, useState } from "react";
+import useTitle from "../../hooks/useTitle";
 
 
 import ReviewSingle from "./ReviewSingle";
 
 const ShowReview = ({ id }) => {
+    useTitle('Show Review')
   const [showReview, setShowReview] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?service=${id}`)

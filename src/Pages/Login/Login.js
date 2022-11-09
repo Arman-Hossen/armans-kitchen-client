@@ -4,8 +4,11 @@ import logInImg from '../../assets/login.avif'
 import { AuthContext } from "../../Contex/AuthProvider/AuthProvider";
 import { FcGoogle } from 'react-icons/fc';
 import { GoogleAuthProvider } from "firebase/auth";
+import useTitle from "../../hooks/useTitle";
+
 
 const Login = () => {
+    useTitle('Log In')
     const {googleProvider,login} = useContext(AuthContext);
     const logInByGoogle = new GoogleAuthProvider();
 

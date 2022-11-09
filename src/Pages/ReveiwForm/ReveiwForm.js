@@ -3,8 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const ReveiwForm = () => {
+    useTitle('Give Review')
     const dateobj = new Date();
     const date = dateobj.toISOString();
     const { _id, title, price } = useLoaderData();

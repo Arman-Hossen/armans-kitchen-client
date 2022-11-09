@@ -4,8 +4,10 @@ import { AuthContext } from "../../Contex/AuthProvider/AuthProvider";
 import { ImageViewer } from "react-image-viewer-dv";
 import { AiFillStar } from "react-icons/ai";
 import ShowReview from "../ShowReview/ShowReview";
+import useTitle from "../../hooks/useTitle";
 
 const ServiceDetails = () => {
+    useTitle('Service Details and Review')
   const {
     _id,
     img,
