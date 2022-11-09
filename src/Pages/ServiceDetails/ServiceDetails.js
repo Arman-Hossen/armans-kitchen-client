@@ -16,6 +16,8 @@ const ServiceDetails = () => {
     total_reveiwer,
     description,
   } = useLoaderData();
+  
+  
   const { user } = useContext(AuthContext);
   return (
     <div>
@@ -65,7 +67,10 @@ const ServiceDetails = () => {
              :
              <>
              <div className="text-center">
-             <Link to='/login'><button className="btn btn-primary">Log in for Give Reveiw</button></Link>
+             <Link to={`/reveiw/${_id}`}><button  className="btn btn-primary">Log in for Give Reveiw</button></Link>
+             
+
+             
              </div>
              </>
           }
