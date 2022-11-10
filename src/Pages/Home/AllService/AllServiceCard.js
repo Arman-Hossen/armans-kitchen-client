@@ -14,7 +14,7 @@ const AllServiceCard = ({service}) => {
     <p className='text-xl font-semibold text-orange-600'>Rating: {rating}</p>
     <p className=''> {description.slice(0,100)+'...'}</p>
     <div className="card-actions justify-center">
-      <Link to={`/services/${_id}`}><button className="btn btn-primary">Veiw Details</button></Link>
+      <Link to={`/services/${_id}`}><button className="btn btn-outline">Veiw Details</button></Link>
     </div>
   </div>
 </div>

@@ -11,9 +11,9 @@ const Services = () => {
     },[])
     return (
         <div>
-            <p className='text-center text-xl font-bold '>MY Services</p>
+            <p className='text-center text-xl font-bold text-orange-500 '>MY Services</p>
             <h1 className=' text-center my-5 text-4xl font-bold'>I Provide This Food Via Online Delivary</h1>
-            <p className='text-center '>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
+            <p className='text-center '>Food is for eating, and good food is to be enjoyed... I think food is, actually, very beautiful in itself <br /> I think food is, actually, very beautiful in itself. </p>
             
            <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-6 '>
            {

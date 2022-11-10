@@ -5,22 +5,22 @@ const Blog = () => {
     useTitle('Blog')
     return (
         <div>
-            <section className="bg-white ">
+            <section >
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                    <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 ">
+                    <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold  ">
                         Blog
                     </h2>
-                    <p className="font-normal text-gray-500 sm:text-xl dark:text-gray-700">
+                    <p className="font-normal">
                         Basic Question about Frontend amd Server
                     </p>
                 </div>
                 <div className="grid gap-6 lg:grid-cols-2">
-                    <article className="p-6 rounded-lg border shadow-md bg-gray-800">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                    <article className="p-6 rounded-lg border shadow-md ">
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight ">
                             Difference between SQL and NoSQL
                         </h2>
-                        <p className="mb-5 font-normal text-gray-300">
+                        <p className="mb-5 font-normal ">
                             SQL databases are relational, NoSQL databases are
                             non-relational. <br />
                             SQL databases use structured query language and have
@@ -35,11 +35,11 @@ const Blog = () => {
                             documents or JSON.
                         </p>
                     </article>
-                    <article className="p-6 rounded-lg border shadow-md bg-gray-800">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                    <article className="p-6 rounded-lg border shadow-md ">
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight ">
                             What is JWT, and how does it work?
                         </h2>
-                        <p className="mb-5 font-normal text-gray-300">
+                        <p className="mb-5 font-normal ">
                             JWTs or JSON Web Tokens are most commonly used to
                             identify an authenticated user. They are issued by
                             an authentication server and are consumed by the
@@ -57,12 +57,12 @@ const Blog = () => {
                             <br /> 2. The signature.
                         </p>
                     </article>
-                    <article className="p-6 rounded-lg border shadow-md bg-gray-800">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                    <article className="p-6 rounded-lg border shadow-md ">
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight ">
                             What is the difference between javascript and
                             NodeJS?
                         </h2>
-                        <p className="mb-5 font-normal text-gray-300">
+                        <p className="mb-5 font-normal ">
                             JavaScript is a proper high-level programming
                             language used to create web scripts whereas Node.js
                             is a run time environment built on google’s v8
@@ -78,12 +78,12 @@ const Blog = () => {
                             server-side development
                         </p>
                     </article>
-                    <article className="p-6 rounded-lg border shadow-md bg-gray-800">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                    <article className="p-6 rounded-lg border shadow-md ">
+                        <h2 className="mb-2 text-2xl font-bold tracking-tight ">
                             How does NodeJS handle multiple requests at the same
                             time?
                         </h2>
-                        <p className="mb-5 font-normal text-gray-300">
+                        <p className="mb-5 font-normal ">
                             NodeJS receives multiple client requests and places
                             them into EventQueue. NodeJS is built with the
                             concept of event-driven architecture. NodeJS has its

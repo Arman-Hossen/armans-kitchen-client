@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AiFillDelete } from 'react-icons/ai';
+
 
 const MyReviewTable = ({review, handleDelete}) => {
     const { _id, serviceName, message, reviewer, img,rating } = review;
@@ -8,7 +10,7 @@ const MyReviewTable = ({review, handleDelete}) => {
         <tr>
         <td>
             <label>
-                <button onClick={() => handleDelete(_id)}  className='btn btn-ghost'>X</button>
+                <button onClick={() => handleDelete(_id)}  className='btn btn-ghost'><AiFillDelete className='text-orange-400' /></button>
             </label>
         </td>
         <td>
@@ -37,6 +39,7 @@ const MyReviewTable = ({review, handleDelete}) => {
         <td>
             <Link to={`/update/${_id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
         </td>
+        
     </tr>
     );
 };

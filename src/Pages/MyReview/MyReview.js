@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contex/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 import MyReviewTable from "./MyReviewTable";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const MyReview = () => {
     useTitle('My Review')
@@ -23,7 +26,16 @@ const MyReview = () => {
         .then(data => {
             console.log(data);
             if (data.deletedCount > 0){
-                alert('deleted successfully');
+                toast.success("Delete successfully!", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 const remaining = reviews.filter(rev => rev._id !== id);
                 SetReviews(remaining);
             }
@@ -65,6 +77,7 @@ const MyReview = () => {
           </div>
         </>
       )}
+      <ToastContainer />
     </div>
   );
 };

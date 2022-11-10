@@ -66,8 +66,8 @@ const ReveiwForm = () => {
     return (
         <div>
         <form onSubmit={handleReview} className='m-10' >
-            <h2 className="text-4xl text-center">You are giving reveiw for: {title}</h2>
-            <h4 className="text-3xl text-center">Price: {price}</h4>
+            <h2 className="text-4xl text-center font-bold">You are giving reveiw for: {title}</h2>
+            <h4 className="text-2xl text-center fond-bold">Price: {price}</h4>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" required/>
                 <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" required/>
@@ -78,7 +78,7 @@ const ReveiwForm = () => {
             </div>
             <textarea name="message" className="textarea textarea-bordered mt-5 h-24 w-full" placeholder="FeedBack" required></textarea>
             <div className='text-center'>
-            <input className='btn btn-primary' type="submit" value="Submit Reveiw" />
+            <input className='btn btn-outline' type="submit" value="Submit Reveiw" />
             </div>
 
             

@@ -1,40 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logoimg.png'
+import { BsGithub, BsFacebook, BsInstagram } from "react-icons/bs";
 
 
 const Footer = () => {
     return (
-        <div data-theme="aqua">
-            <footer className="footer p-32 text-white">
-  <div>
-  <Link to='/' className="btn btn-ghost normal-case text-xl">
-      <img className='h-full w-full rounded' src={logo} alt="" />
-    </Link>
-    
-    <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
-  </div> 
-  <div>
-    <span className="footer-title">Services</span> 
-    <a href ="/" className="link link-hover">Branding</a> 
-    <a href ="/" className="link link-hover">Design</a> 
-    <a href ="/" className="link link-hover">Marketing</a> 
-    <a href ="/" className="link link-hover">Advertisement</a>
-  </div> 
-  <div>
-    <span className="footer-title">Company</span> 
-    <a href ="/" className="link link-hover">About us</a> 
-    <a href ="/" className="link link-hover">Contact</a> 
-    <a href ="/" className="link link-hover">Jobs</a> 
-    <a href ="/" className="link link-hover">Press kit</a>
-  </div> 
-  <div>
-    <span className="footer-title">Legal</span> 
-    <a href ="/" className="link link-hover">Terms of use</a> 
-    <a href ="/" className="link link-hover">Privacy policy</a> 
-    <a href ="/" className="link link-hover">Cookie policy</a>
-  </div>
-</footer>
+        <div >
+           <footer className="footer footer-center p-10 ">
+            <div>
+                <img className="h-32 w-32 rounded-full" src={logo} alt="" />
+                <h1 className='text-center'> Arman's Kitchen</h1>
+                <p className="font-bold">
+                Eating good food is my favourite thing <br /> in the whole world. Nothing is more blissful.
+                </p>
+                <p>Copyright © 2022 - All right reserved - Armans Kitchen</p>
+            </div>
+            <div>
+                <div className="grid grid-flow-col gap-4">
+                    <a className='h-24' href="https://github.com/Arman-Hossen">
+                        <BsGithub />
+                    </a>
+                    <a href="https://www.linkedin.com/in/md-arman-hossen-9699b5227/">
+                        <BsFacebook />
+                    </a>
+                    <a href="https://www.instagram.com/arman_nur_tousif/">
+                        <BsInstagram />
+                    </a>
+                </div>
+            </div>
+        </footer>
         </div>
     );
 };
