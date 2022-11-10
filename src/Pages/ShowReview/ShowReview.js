@@ -8,7 +8,7 @@ const ShowReview = ({ id }) => {
     
   const [showReview, setShowReview] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?service=${id}`)
+    fetch(`https://armans-kitchen-server.vercel.app/reviews?service=${id}`)
       .then((res) => res.json())
       .then((data) => setShowReview(data));
   }, [id]);

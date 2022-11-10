@@ -50,12 +50,12 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params}) => fetch(`https://armans-kitchen-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/reveiw/:id',
                 element:<PrivateRoute><ReveiwForm></ReveiwForm></PrivateRoute> ,
-                loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params}) => fetch(`https://armans-kitchen-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/myreview',
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                loader: ({params}) => fetch(`https://armans-kitchen-server.vercel.app/reviews/${params.id}`)
             },
             {
                 path:'/addservice',

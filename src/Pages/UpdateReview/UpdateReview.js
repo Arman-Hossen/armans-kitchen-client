@@ -15,7 +15,7 @@ const UpdateReview = () => {
         event.preventDefault();
         console.log(user);
     
-        fetch(`http://localhost:5000/reviews/${_id}`,{
+        fetch(`https://armans-kitchen-server.vercel.app/reviews/${_id}`,{
             method: 'PUT',
             headers:{
                 "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const UpdateReview = () => {
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
             Price (read only)
         </label>
-            <input onChange={handleInputChange} name="price" type="text" placeholder="Price" defaultValue={price} className="input input-ghost w-full my-2 input-bordered"/>
+            <input onChange={handleInputChange} name="price" type="text" placeholder="Price" defaultValue={price} readOnly className="input input-ghost w-full my-2 input-bordered "/>
             
             <textarea onChange={handleInputChange} name="message" placeholder="FeedBack" className="textarea textarea-bordered mt-5 h-24 w-full"  defaultValue={message}></textarea>
             <div className="text-center mt-4">

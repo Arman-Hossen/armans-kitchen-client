@@ -11,7 +11,7 @@ const MyReview = () => {
   const { user } = useContext(AuthContext);
   const [reviews, SetReviews] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(`https://armans-kitchen-server.vercel.app/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => SetReviews(data));
   }, [user?.email]);
@@ -19,7 +19,7 @@ const MyReview = () => {
   const handleDelete = id =>{
     const proceed = window.confirm('Are you sure, you want to cancel this order');
     if(proceed){
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://armans-kitchen-server.vercel.app/reviews/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
